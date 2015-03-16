@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style type="text/css">
+.加粗 {
+	font-weight: bold;
+}
+.加粗 {
+	font-weight: bold;
+}
+.加粗 {
+	font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+<p><img src="注册登录/图片/QQ图片20150308183151.png" width="1320" height="200" />
+</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<table width="648" border="1" align="center">
+  <tr>
+    <td height="53" colspan="2"><p><span class="加粗">时间</span> ：（日历不知怎么搞）    （注意申请课室必须提前一天申请）</p>
+      <p> <span class="加粗">人数</span>：
+        <select name="numselect" id="numselect">
+          <option>82</option>
+          <option>85</option>
+          <option>126</option>
+          <option>130</option>
+          <option>154</option>
+          <option>156</option>
+          <option>209</option>
+          <option>211</option>
+          <option>216</option>
+          <option>270</option>
+          <option>340</option>
+          <option>354</option>
+          <option>396</option>
+        </select>
+        <label for="num"></label>
+      </p>
+      <p><span class="加粗">用途</span>：
+        <select name="usefor" id="usefor">
+          <option value="1">活动</option>
+          <option value="2">会议</option>
+        </select>
+    </p></td>
+  </tr>
+{% for u in posts %}
+  <tr>
+    <td width="76">{{u.name}}</td>
+    <td width="556">课室大小：可容纳{{u.area}}人；空闲时间：{{u.st}}~{{u.en}}；<a href="{{u.detail}}">点击查看详细资料</a>      <input type="submit" name={{u.sname}} id={{u.sid}} value="申请" /></td>
+  </tr>
+{% endfor %}
+</table>
+</body>
+</html>

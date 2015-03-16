@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style type="text/css">
+.居中 {
+	text-align: center;
+}
+.居中 {
+	text-align: center;
+}
+.居中 {
+	text-align: center;
+}
+.警示 {
+	color: #F00;
+}
+</style>
+</head>
+
+<body>
+
+{% for text in posts.texts %}
+<p>{{text}}</p>
+{% endfor %}
+
+
+<p class="居中">{{posts.name}}课室</p>
+<p>课室大小：可容纳{{posts.area}}人；</p>
+<p>空闲时间：{{posts.st}}~{{posts.en}}；</p>
+<p>具有可移动桌椅；具有多媒体；</p>
+<p>距离申请时间还剩3天，</p>
+<p>请务必提前一天申请。</p>
+<p>&nbsp;</p>
+<p>周围环境：</p>
+<p> A202课室已被申请（社团活动）；</p>
+<p> A204课室空闲；</p>
+<p> A303课室已被申请（会议类）；<br />
+  <br />
+A103课室上课；<span class="警示">（楼下上课请保持安静）</span></p>
+<p class="居中"><a href="Untitled-1.html">返回</a></p>
+</body>
+</html>

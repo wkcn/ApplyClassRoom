@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>登录</title>
+<style type="text/css">
+#apDiv1 {
+	position: absolute;
+	width: 100%;
+	height: 135px;
+	z-index: 1;
+	background-color: #005825;
+}
+#apDiv2 {
+	position: absolute;
+	width: 417px;
+	height: 115px;
+	z-index: 2;
+	left: 414px;
+	top: 8px;
+	font-size: 36px;
+}
+#apDiv2 p {
+	font-weight: bold;
+	font-size: 18pt;
+	color: #FFF;
+}
+#form1 table tr td strong {
+	font-size: 24px;
+}
+</style>
+</head>
+
+<body>
+<div id="apDiv1"><img src="./pic/logo.jpg" width="402" height="134" /></div>
+<div id="apDiv2">
+  <p>&nbsp;</p>
+  <p>东校区课室申请系统</p>
+</div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<form id="form1" name="form1" method="POST">
+  <table width="495" border="1" align="center">
+    <tr>
+      <td height="48" colspan="2" align="center"><strong>欢迎登录中山大学东校区课室申请系统</strong></td>
+    </tr>
+    <tr>
+      <td height="64" colspan="2" align="center"><strong>请使用Net ID登录</strong></td>
+    </tr>
+    <tr>
+      <td width="92" height="51">用户名：</td>
+      <td><input type="text" name="username" value="{{user.name}}"/></td>
+    </tr>
+    <tr>
+      <td height="50">密码：</td>
+      <td><input type="password" name="pwd" value="{{user.pwd}}""/>
+      </td>
+    </tr>
+    <tr><td></td>
+    <td><input type="submit" name="submit" value="提交"/>
+    <input type="reset" name="reset" value="重置"/></td>
+    </tr>
+  </table>
+</form>
+<p>&nbsp;</p>
+</body>
+</html>
