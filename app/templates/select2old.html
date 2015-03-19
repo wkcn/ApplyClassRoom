@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>中山大学课室申请系统</title>
+</head>
+
+<body>
+<table width="508" height="326" border="1">
+{% for post in posts %}
+<tr>
+{% for w in post %}
+    <td>{{w}}</td>
+{% endfor %}
+</tr>
+{% endfor %}
+</table>
+</body>
+</html>

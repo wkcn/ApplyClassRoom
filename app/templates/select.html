@@ -4,57 +4,60 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>无标题文档</title>
 <style type="text/css">
-.加粗 {
-	font-weight: bold;
-}
-.加粗 {
-	font-weight: bold;
-}
-.加粗 {
-	font-weight: bold;
+.大号 {
+	font-size: 24px;
 }
 </style>
 </head>
 
 <body>
-<p><img src="注册登录/图片/QQ图片20150308183151.png" width="1320" height="200" />
-</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<table width="648" border="1" align="center">
+<table width="824" height="428" border="0" align="center">
   <tr>
-    <td height="53" colspan="2"><p><span class="加粗">时间</span> ：（日历不知怎么搞）    （注意申请课室必须提前一天申请）</p>
-      <p> <span class="加粗">人数</span>：
-        <select name="numselect" id="numselect">
-          <option>82</option>
-          <option>85</option>
-          <option>126</option>
-          <option>130</option>
-          <option>154</option>
-          <option>156</option>
-          <option>209</option>
-          <option>211</option>
-          <option>216</option>
-          <option>270</option>
-          <option>340</option>
-          <option>354</option>
-          <option>396</option>
-        </select>
-        <label for="num"></label>
-      </p>
-      <p><span class="加粗">用途</span>：
-        <select name="usefor" id="usefor">
-          <option value="1">活动</option>
-          <option value="2">会议</option>
-        </select>
-    </p></td>
-  </tr>
-{% for u in posts %}
+    <td width="818" align="center" valign="middle" background="static/pic/cloud.jpg"><span class="大号">中山大学课室申请</span>
+<table width="545" border="0" align="center">
   <tr>
-    <td width="76">{{u.name}}</td>
-    <td width="556">课室大小：可容纳{{u.area}}人；空闲时间：{{u.st}}~{{u.en}}；<a href="{{u.detail}}">点击查看详细资料</a>      <input type="submit" name={{u.sname}} id={{u.sid}} value="申请" /></td>
+        <td width="120">开始时间：</td>
+        <td width="415"><label for="textfield"></label>
+          <input type="text" name="st" id="st" value="{{stTime}}"/>
+      </tr>
+        <tr>
+        <td width="120">结束时间：</td>
+        <td width="415"><label for="textfield"></label>
+          <input type="text" name="en" id="en" value="{{enTime}}"/></td>
+      </tr>
+      <tr>
+        <td>人数：</td>
+        <td><form id="form1" name="form1" method="post" action="">
+          <label for="textfield2"></label>
+          <input type="text" name="area" id="area" value="{{area}}"/>
+        </form></td>
+      </tr>
+      
+      <tr>
+        <td>用途：</td>
+        <td><label for="yongtu"></label>
+          <select name="yongtu" size="1" id="yongtu">
+            <option>活动</option>
+            <option>会议</option>
+          </select></td>
+      </tr>
+      
+      <tr>
+      <input type="submit" name="submit" value="查询"/>
+      </tr>
+      
+      {% for u in posts %}
+      
+      <tr>
+        <td>{{u.name}}</td>
+        <td><p>课室大小：可容纳{{u.area}}人；空闲时间：{{u.st}}~{{u.en}}；</p>
+          <p><a href="{{u.detail}}">详细</a></p></td>
+      </tr>
+      
+      {% endfor %}
+      
+  </table></td>
   </tr>
-{% endfor %}
 </table>
 </body>
 </html>

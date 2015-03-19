@@ -23,11 +23,9 @@ def login():
             'pwd':''#session.get('pwd','')
             }
 
-    posts = [
-            {'resLogin':session.get('resLogin','')
-            }
-            ]
-    return render_template("login.html",user = user)
+    posts = session.get('resLogin','')
+    print session.get('resLogin','')
+    return render_template("login.html",user = user,posts = posts)
 
 @app.route('/loginout')
 def loginout():
@@ -39,6 +37,7 @@ def loginout():
 @app.route('/detail/<info>')
 def detail(info=None):
     if info == None:
+        session['resLogin'] = '请登陆'
         return redirect(url_for('select'))
     #A202:2:99:100
     try:
@@ -80,20 +79,25 @@ def indexold():
 
 @app.route('/select',methods=['GET','POST'])
 def select():
-    if True or request.method == 'POST':
+    if request.method == 'POST':
+        print 'haha'
         print request.form
     loginSuccess = False
     if session.has_key('username'):
         if session.has_key('pwd') and LoginSuccess(session['username'],session['pwd']):
           loginSuccess = True
         else:
-            session['resLogin'] = 'Password Error'
+            session['resLogin'] = '密码错误'
     else:
-        session['resLogin'] = 'Please Login >.<'
-
+        session['resLogin'] = '请登陆'
+    session['resLogin'] = ''
     if not loginSuccess:
         return redirect(url_for('login'))
 
+    stTime = '14:30'
+    enTime = '16:00'
+    area = 80
+        
     d = 2
     st = Time2Int('14:30')
     en = Time2Int('16:00')
@@ -108,7 +112,7 @@ def select():
                 'area':r.area,
                 'st':Int2Time(near[0]),
                 'en':Int2Time(near[1]),
-                'detail':'&name=' + r.name,
+                'detail':'detail/' + r.name + '-' + '3' + '-'+ stTime + '-' + enTime,
                 'sname':r.name,
                 'sid':r.name}
         posts.append(a)
@@ -130,7 +134,7 @@ def select():
         'sid':1}
     ]
     '''
-    return render_template("select.html",posts = posts)
+    return render_template("select.html",posts = posts,stTime=stTime,enTime=enTime,area=area)
         
 @app.route('/select2')
 def select2():
