@@ -2,25 +2,62 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>详细信息</title>
+<title>{{posts.name}}课室详细信息</title>
 <style type="text/css">
-.居中 {
-	text-align: center;
-}
-.居中 {
-	text-align: center;
-}
-.居中 {
-	text-align: center;
-}
-.警示 {
+.虹 {
 	color: #F00;
+}
+.虹 {
+	color: #F00;
+}
+.白 {
+	color: #FFF;
+}
+.虹 .白 {
+	color: #000;
 }
 </style>
 </head>
 
 <body>
-
-{% for text in posts.texts %}
-<p>{{text}}</p>
-{% endfor %}
+<table width="1007" height="434" border="0" align="center">
+  <tr>
+    <td width="568" align="center" background="{{ url_for('static', filename='pic/cloud.jpg') }}"><table width="558" border="0" align="center">
+      <tr>
+        <td width="250">{{posts.name}}课室详细信息</td>
+      </tr>
+      <tr>
+        <td width="141">课室容量：</td>
+        <td width="407">可容纳{{posts.area}}人；</td>
+      </tr>
+      <tr>
+        <td>空闲时间段：</td>
+        <td>空闲时间：{{posts.st}}~{{posts.en}}；</td>
+      </tr>
+      <tr>
+        <td>是否具有多媒体：</td>
+        <td>是</td>
+      </tr>
+      <tr>
+        <td>桌椅是否可移动：</td>
+        <td>是</td>
+      </tr>
+      
+      <tr>
+        <td>周围环境：</td>
+        <td>
+        
+        {% for u in posts.text %}
+        <p> u </p>
+        {% endfor %}
+          
+          </td>
+      </tr>
+      
+    </table>
+    <p> <span class="虹"><span class="白">温馨提示：距离申请时间还有3天</span></span></p>
+    <p>返回</p></td>
+  </tr>
+</table>
+</body>
+</html>

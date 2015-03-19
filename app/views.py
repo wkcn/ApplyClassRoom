@@ -52,7 +52,7 @@ def detail(info=None):
         posts = {
                 'texts':RoomDetail(roomsData,name,d,st,en),
                 'name':name,
-                'area':roomsData[name],
+                'area':roomsData[name].area,
                 'st':Int2Time(near[0]),
                 'en':Int2Time(near[1])
                 }
